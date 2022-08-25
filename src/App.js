@@ -1,22 +1,40 @@
-import './App.css';
+import './components/estilos.css'
+import 'core-js/actual';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Item from './components/Item';
+import Titulo from './components/Titulo';
+import Input from './components/Input';
 
 function App() {
-
-  let imagen = "logo192.png"
-  let titulo = "Probando"
+  const lista = ["Desarrollo Web", "Javascript", "React JS"];
+  //const items = ;
 
   return (
-  <div className='container'>
-    <div className='row'>
-    <div className='col md-4 offset-md-2'>
-      <img src={imagen} alt={titulo} className="img-fluid" />
+    <div className='container'>
+      <Header curso="Curso de " tipo="React" />
+      <main className='py-3'>
+        <Titulo valor="Cursos de Coderhouse" />
+        <ul>
+          {lista.map(items => (
+            <Item valor={items} />
+          ))}
+        </ul>
+        <Titulo valor="Formulario de Contacto" />
+        <form>
+          <div className="mb-3">
+            <label className="form-label">Nombre</label>
+            <Input valor="Nombre" />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Email</label>
+            <Input valor="Email" />
+          </div>
+          <button type="button" className="btn btn-primary">Enviar</button>
+        </form>
+      </main>
+      <Footer ubicacion="Coderhouse" anio="2022" />
     </div>
-    <div className='col md-4'>
-    <h1>{titulo}</h1>
-    <p>Mi primera pagina de React</p>
-    </div>
-    </div>
-  </div>
   );
 }
 
