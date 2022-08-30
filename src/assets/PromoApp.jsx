@@ -2,7 +2,7 @@ import React from "react";
 import "./PromoApp.css";
 import appstore from "./images/app__store.png";
 import googleplay from "./images/google_play.png";
-import celular from "./images/landing_page_image-croped-5-1-1.png";
+import celular from "./images/BACON BABY HAMBURGUESA.png";
 
 const PromoApp = () => {
     return (

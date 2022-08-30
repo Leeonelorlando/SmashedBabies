@@ -1,10 +1,10 @@
 import React from "react";
-import imagen from "./images/HomeBanner_STACKERXL-27.jpg";
+import imagen from "./images/HISTORIA SMASH BABY LA REINA DE LA CASA.jpg";
 
 const Destacado = () => {
     return (
         <div className="text-center">
-           <img src={imagen} alt="Promoción Destacada" className="img-fluid" /> 
+           <img src={imagen} alt="Promoción Destacada" className="img-fluid" width="300" /> 
         </div>
         
     )
