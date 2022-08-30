@@ -1,14 +1,23 @@
 import React from "react";
+import logo from "./images/LOGO.png";
 
-const Descripcion = ({tipo}) => <p>{tipo}, es un Framework de JS...</p>
-
-const Header = (props) => {
+const Header = () => {
     return (
-        <div className="row">
-            <div className="col-md-12 bg-light text-black p-3">
-                <h1>{props.curso} {props.tipo}</h1>
-                <Descripcion tipo={props.tipo} />    
-            </div>
+        <div className="container">
+            <ul className="nav d-flex align-items-center">
+                <li className="nav-item">
+                    <a className="nav-link active" aria-current="page" href="# "><img src={logo} width="48" alt="Burguer King" /></a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link link_header" href="# ">Pedí tu Combo Favorito</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link link_header" href="# ">Menú</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link link_header" href="# ">Cupones</a>
+                </li>
+            </ul>
         </div>
     )
 }

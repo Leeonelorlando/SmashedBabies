@@ -7,35 +7,17 @@ import Titulo from './components/Titulo';
 import Input from './components/Input';
 
 function App() {
-  const lista = ["Desarrollo Web", "Javascript", "React JS"];
-  //const items = ;
 
   return (
-    <div className='container'>
-      <Header curso="Curso de " tipo="React" />
-      <main className='py-3'>
-        <Titulo valor="Cursos de Coderhouse" />
-        <ul>
-          {lista.map(items => (
-            <Item valor={items} />
-          ))}
-        </ul>
-        <Titulo valor="Formulario de Contacto" />
-        <form>
-          <div className="mb-3">
-            <label className="form-label">Nombre</label>
-            <Input valor="Nombre" />
-          </div>
-          <div className="mb-3">
-            <label className="form-label">Email</label>
-            <Input valor="Email" />
-          </div>
-          <button type="button" className="btn btn-primary">Enviar</button>
-        </form>
-      </main>
-      <Footer ubicacion="Coderhouse" anio="2022" />
-    </div>
-  );
+    <div className='container-fluid fondo_amarillo'>
+    <Header />
+    <hr />
+    <Item />
+    <Titulo />
+    <Input />
+    <Footer />
+  </div>
+);
 }
 
 export default App;

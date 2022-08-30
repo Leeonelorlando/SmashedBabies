@@ -1,16 +1,29 @@
-import React, { Component } from "react";
-import Prefooter from "./Prefooter";
+import React from "react";
+import './estilos.css';
+import whatsapp from "./images/SM-RRSS-01.png";
+import instagram from "./images/SM-RRSS-03.png";
+import facebook from "./images/SM-RRSS-04.png";
 
-class Footer extends Component {
-    render() {
+const Footer = () => {
         return (
-            <div className="row">
-                <div className="col-md-12 bg-black text-white p-3">
-                <Prefooter ubicacion={this.props.ubicacion} anio={this.props.anio} />  
-                </div>                
+            <div className="row fondo_marron p-5">
+            <div className="col">
+                <div className="container text-white">
+                    <hr />
+                    <div className="row">
+                        <div className="col-md-6">
+                            <p>TM © 2021 Burger King Corporation. Todos los derechos reservados.</p>
+                        </div>
+                        <div className="col-md-6 text-end">
+                            <img src={facebook} width="24" alt="facebook" /> 
+                            <img src={instagram} width="24" alt="instagram" /> 
+                            <img src={whatsapp} width="24" alt="whatsapp" /> 
+                        </div>
+                    </div>
+                </div>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default Footer;
