@@ -4,6 +4,7 @@ import Destacado from './assets/Destacado';
 import Footer from './assets/Footer';
 import Header from './assets/Header';
 import PromoApp from './assets/PromoApp';
+import Cards from './components/Cards';
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
       <Header />
       <hr />
       <Destacado />
+      <hr />
+      <Cards />
       <Cupones />
       <PromoApp />
       <Footer />
