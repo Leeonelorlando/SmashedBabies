@@ -15,10 +15,10 @@ const Footer = () => {
                             <p>TM © 2022 Smashed Babies Burgers Corporation. Todos los derechos reservados.</p>
                         </div>
                         <div className="col-md-6 text-end">
-                            <img src={facebook} width="24" alt="facebook" /> 
-                            <img src={instagram} width="24" alt="instagram" /> 
-                            <img src={youtube} width="24" alt="youtube" /> 
-                            <img src={twitter} width="24" alt="twitter" /> 
+                            <img src={facebook} width="30" alt="facebook" /> 
+                            <img src={instagram} width="30" alt="instagram" /> 
+                            <img src={youtube} width="30" alt="youtube" /> 
+                            <img src={twitter} width="30" alt="twitter" /> 
                         </div>
                     </div>
                 </div>

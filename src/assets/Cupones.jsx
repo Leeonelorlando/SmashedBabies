@@ -7,13 +7,16 @@ const Cupones = () => {
     return (
         <div className="container my-5">
             <div className="row">
-                <div className="col-md-4">
-                    <img src={cupon1} alt="Cupon1" className="img-fluid rounded" width="250" />
+                <div className="text-white text-center letra-titulos">
+                    <h3>Cupones</h3>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 text-center">
+                    <img src={cupon1} alt="Cupon1" className="img-fluid rounded padding_footer-imgg" width="250" />
+                </div>
+                <div className="col-md-4 text-center padding_footer-img">
                     <img src={cupon2} alt="Cupon2" className="img-fluid rounded" width="250" />
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 text-center">
                     <img src={cupon3} alt="Cupon3" className="img-fluid rounded" width="250" />
                 </div>
             </div>
