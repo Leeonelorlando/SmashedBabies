@@ -29,7 +29,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
         <div className="container col-md-6 text-light">
             <div className="row">
                 <div className="col-md-2">
-                    <p className="text-center">Cantidad de Productos</p>
+                    <p className="text-center text-light">Cantidad de Productos</p>
                     <div className="input-group">
                         <input type="button" className="btn btn-secondary" value="-" onClick={() => {decrementarCantidad(cantidad - 1)}} />
                         <input type="text" className="form-control" value={cantidad} onChange={() => {}} />
