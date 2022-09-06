@@ -1,10 +1,11 @@
 import React from "react";
 import logo from "./images/SMASHED BABIES LOGO 1.png";
+import CartWidget from "../assets/CartWidget";
 
 const Header = () => {
     return (
         <div className="container color_header">
-            <ul className="nav d-flex align-items-center">
+            <ul className="nav d-flex align-items-center" >
                 <li className="nav-item">
                     <a className="link_header" aria-current="page" href="# "><img src={logo} width="100" alt="Smashed Babies" /></a>
                 </li>
@@ -17,6 +18,8 @@ const Header = () => {
                 <li className="nav-item">
                     <a className="link_header" href="# ">Cupones</a>
                 </li>
+                
+                <CartWidget />
             </ul>
         </div>
     )

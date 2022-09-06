@@ -2,13 +2,13 @@ import React from "react";
 import "./PromoApp.css";
 import appstore from "./images/app__store.png";
 import googleplay from "./images/google_play.png";
-import celular from "./images/BACON BABY HAMBURGUESA.png";
+import menu from "./images/MENU SMASHED.jpg";
 
-const PromoApp = () => {
+const Prefooter = () => {
     return (
         <div className="row fondo_rojo">
             <div className="col-md-4 offset-md-2 pt-5 text-center">
-                <img src={celular} alt="Celular" width="480" />
+                <img src={menu} alt="Menu" width="480" />
             </div>
             <div className="col-md-4 p-5 text-white">
                 <h3>Descargá la APP y disfrutá mucho más por mucho menos</h3>
@@ -19,4 +19,4 @@ const PromoApp = () => {
     )
 }
 
-export default PromoApp;
+export default Prefooter;

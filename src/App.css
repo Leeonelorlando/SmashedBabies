@@ -84,3 +84,7 @@ a:link, a:visited {
 a:hover {
   color:#f3a2a2;
 }
+
+.card-personalizada {
+  width: 300px
+}

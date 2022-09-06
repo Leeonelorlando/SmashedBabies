@@ -1,21 +1,17 @@
 import './App.css';
-import Cupones from './assets/Cupones';
-import Destacado from './assets/Destacado';
 import Footer from './assets/Footer';
 import Header from './assets/Header';
-import PromoApp from './assets/PromoApp';
+import ItemCount from './assets/ItemCount';
+import Prefooter from './assets/Prefooter';
 import Cards from './components/Cards';
 
 function App() {
   return (
     <div className='container-fluid fondo_amarillo'>
       <Header />
-      <hr />
-      <Destacado />
-      <hr />
       <Cards />
-      <Cupones />
-      <PromoApp />
+      <ItemCount stock={5} initial={1} onAdd={0}/>
+      <Prefooter />
       <Footer />
     </div>
   );
