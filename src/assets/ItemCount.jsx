@@ -1,47 +1,40 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useContext } from "react";
+import {CartContext} from "../CartContext";
 
-const ItemCount = ({stock, initial, onAdd}) => {
-    const [cantidad, setCantidad] = useState(initial); 
-    const [itemStock, setItemStock] = useState(stock); 
-    const [itemAdd, setItemAdd] = useState(onAdd); 
+const ItemCount = (props) => {
+    const {item} = props;
+    const {cart, setCart, addItem} = useContext(CartContext);
+    const [counter, setCounter] = useState(props.initial);
+    const [itemStock, setItemStock] = useState(5);
+    
 
     const decrementarCantidad = (valor) => {
         if (valor > 0) {
-            setCantidad(valor);
+            setCounter(valor);
         }
     }
 
     const incrementarCantidad = (valor) => {
         if (valor <= itemStock) {
-            setCantidad(valor);
+            setCounter(valor);
         }
     }
 
     const agregarProductos = () => {
-        if (cantidad <= itemStock) {
-            setItemStock(itemStock - cantidad);//
-            setItemAdd(itemAdd + cantidad);//
-        }  
+        if (counter <= itemStock) {
+            addItem(item, counter);
+            setItemStock(itemStock - counter);
+        }   
     }
 
     return (
-        <div className="container col-md-6 text-light">
-            <div className="row">
-                <div className="col-md-2">
-                    <p className="text-center text-light">Cantidad de Productos</p>
-                    <div className="input-group">
-                        <input type="button" className="btn btn-secondary" value="-" onClick={() => {decrementarCantidad(cantidad - 1)}} />
-                        <input type="text" className="form-control" value={cantidad} onChange={() => {}} />
-                        <input type="button" className="btn btn-danger" value="+" onClick={() => {incrementarCantidad(cantidad + 1)}} />
-                    </div>
-                    <div className="d-grid gap-2 py-3">
-                        <input type="button" className="btn btn-primary" value="Agregar" onClick={() => {agregarProductos()}} />      
-                    </div>
-                    <p>Productos Seleccionados: {itemAdd}</p>
-                </div>
-            </div>            
-        </div>  
+        <div className="row">
+            <div className=" text-center">
+                <p><input type="button" className="btn" value="-" onClick={() => {decrementarCantidad(counter - 1)}} /> {counter} <input type="button" className="btn fondo_naranja mr-3" value="+" onClick={() => {incrementarCantidad(counter + 1)}} /></p>
+                <p><input type="button" className="btn" value="Agregar" onClick={() => {agregarProductos()}} /></p>
+                <p>Stock: {itemStock}</p>
+            </div>        
+        </div>
     )
 };
 

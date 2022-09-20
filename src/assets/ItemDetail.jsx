@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 
 import "./Card.css";
+import ItemCount from "./ItemCount";
+import { CartContext } from "../CartContext";
 
-function Card({ imageSource, title, text, url }) {
+function ItemDetail({ imageSource, title, text, url }) {
+
+    const { addItem } = useContext(CartContext);
+    const [counter, setCounter] = useState(0);
+    /* const [prod, setProd] = useState(item);
+    console.log(prod); */
+    const onAdd = (item, counter) => {
+        setCounter(counter);
+        addItem(item, counter);
+    }
+
   return (
     <div className="card text-center bg-dark animate__animated animate__fadeInUp" width="50%">
       <div className="overflow">
@@ -20,16 +32,19 @@ function Card({ imageSource, title, text, url }) {
         >
           Ir a {title}
         </a>
+        <div className="btn btn-primary">
+            {<ItemCount initial={1} stock={5} onAdd={onAdd} counter={counter} setCounter={setCounter} />}
+        </div>
       </div>
     </div>
   );
 }
 
-Card.propTypes = {
+ItemDetail.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string,
   url: PropTypes.string,
   imageSource: PropTypes.string
 };
 
-export default Card;
+export default ItemDetail;

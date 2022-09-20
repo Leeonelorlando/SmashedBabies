@@ -1,12 +1,12 @@
 import React from "react";
-import Card from "./Card";
+import ItemDetail from "../assets/ItemDetail";
 
 import cupon1 from "../assets/images/HISTORIA CHEESE BABY.jpg";
 import cupon2 from "../assets/images/HISTORIA ONION BABY.jpg";
 import cupon3 from "../assets/images/HISTORIA QUARTER BABY.jpg";
 import cupon4 from "../assets/images/HISTORIA SMASH BABY.jpg";
 
-const cards = [
+export const cards = [
   {
     id: 1,
     title: "CHEESE BABY",
@@ -43,7 +43,7 @@ function Cards() {
       <div className="row">
         {cards.map(({ title, image, text, url, id }) => (
           <div className="col-md-4 card-personalizada" key={id}>
-            <Card imageSource={image} title={title} text={text} url={url} />
+            <ItemDetail imageSource={image} title={title} text={text} url={url} />
           </div>
         ))}
       </div>
