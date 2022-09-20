@@ -4,8 +4,11 @@ import PropTypes from "prop-types";
 import "./Card.css";
 import ItemCount from "./ItemCount";
 import { CartContext } from "../CartContext";
+import { Link } from "react-router-dom";
 
 function ItemDetail({ imageSource, title, text, url }) {
+
+    const [goToCart, setGoToCart] = useState (false)
 
     const { addItem } = useContext(CartContext);
     const [counter, setCounter] = useState(0);
@@ -24,17 +27,14 @@ function ItemDetail({ imageSource, title, text, url }) {
       <div className="card-body text-light">
         <h4 className="card-title">{title}</h4>
         <p className="card-text text-secondary"> {text} </p>
-        <a
-          href={url ? url : "#!"}
-          target="_blank"
-          className="btn btn-outline-secondary border-0"
-          rel="noreferrer"
-        >
-          Ir a {title}
-        </a>
-        <div className="btn btn-primary">
-            {<ItemCount initial={1} stock={5} onAdd={onAdd} counter={counter} setCounter={setCounter} />}
-        </div>
+        {
+          goToCart
+            ? <Link to= '/cart'>Terminar compra</Link>
+            :
+            <div className="btn btn-primary">
+            <ItemCount initial={1} stock={5} onAdd={onAdd} counter={counter} setCounter={setCounter} />
+            </div>
+        }
       </div>
     </div>
   );
